@@ -13,6 +13,7 @@ startButton.addEventListener("click", () => {
   //   console.log("button clicked");
 
   timefn = setInterval(() => {
+    startButton.disabled=true;
     if (seconds >= 59) {
       seconds = 0;
       minutes++;
@@ -33,11 +34,13 @@ startButton.addEventListener("click", () => {
 //adding event handler to stop button
 stopButton.addEventListener("click", () => {
   //   console.log("button clicked");
+  startButton.disabled=false;
   clearInterval(timefn);
 });
 
 //adding event handler to reset button
 resetButton.addEventListener("click", () => {
+  startButton.disabled=false;
   //   console.log("button clicked");
   seconds = 0;
   minutes = 0;
